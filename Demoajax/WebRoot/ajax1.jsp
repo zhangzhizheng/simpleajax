@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -51,7 +52,7 @@
 			//第二步打开与服务器的连接
 			/*参数：指定请求方式，指定请求的url,指定是否为异步请求
 			*/
-			xmlHttp.open("GET","/Demoajax/AServlet",true);
+			xmlHttp.open("GET","<c:url value='/AServlet'/>",true);
 			//第三步发送请求
 			xmlHttp.send(null);//get请求没有请求体，但也要给出null,不然火狐浏览器可能会不能发送
 			//第四步给出异步对象onreadystatechange事件注册监听器
